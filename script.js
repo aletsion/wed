@@ -1,22 +1,29 @@
-// Mobile menu toggle
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
+// Mobile menu
+const navToggle = document.getElementById('navToggle');
+const navList = document.getElementById('navList');
+const header = document.querySelector('.header');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+navToggle.addEventListener('click', () => {
+    navList.classList.toggle('active');
 });
 
-// Smooth scroll + đóng menu khi click (trên mobile)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
-        });
+// Close menu when clicking a link
+document.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', () => {
+        navList.classList.remove('active');
+    });
+});
 
-        // Đóng menu mobile sau khi click
-        navLinks.classList.remove('active');
+// Header scroll effect
+window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
     });
 });
