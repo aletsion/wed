@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyễn Văn A — Full-Stack Developer</title>
-    <meta name="description" content="Portfolio cá nhân Nguyễn Văn A - Full-stack Developer chuyên React, Node.js, Next.js">
-    
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-<body>
+    <meta name="description" content="Portfolio Nguyễn Văn A - Full-Stack Developer chuyên React, Node.js, Next.js">
+    <title>Nguyễn Văn A | Full-Stack Developer</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
     <!-- Header -->
-    <header class="header">
-        <div class="container header__container">
-            <a href="#" class="logo">NVA<span>.</span></a>
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#" class="logo">NVA.</a>
             <nav class="nav">
                 <ul class="nav__list">
                     <li><a href="#home" class="nav__link">Home</a></li>
@@ -24,12 +27,14 @@
                     <li><a href="#projects" class="nav__link">Projects</a></li>
                     <li><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
-                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button id="menuToggle" class="menu-toggle" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <div class="header__actions">
+                    <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="mobileMenu" class="mobile-menu-btn" aria-label="Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
@@ -38,13 +43,13 @@
     <section id="home" class="hero">
         <div id="particles-js"></div>
         <div class="container hero__content">
-            <p class="hero__pretitle">Xin chào, mình là</p>
-            <h1 class="hero__title">Nguyễn Văn A</h1>
-            <h2 class="hero__typed" id="typed"></h2>
-            <p class="hero__desc">Mình xây dựng những sản phẩm web đẹp mắt, nhanh như chớp và có thể scale tới triệu user.</p>
-            <div class="hero__buttons">
+            <p class="hero__greeting">Xin chào, mình là</p>
+            <h1 class="hero__name">Nguyễn Văn A</h1>
+            <div class="hero__typing" id="typing"></div>
+            <p class="hero__bio">Full-Stack Developer chuyên xây dựng các sản phẩm web hiện đại, đẹp mắt và hiệu năng cao.</p>
+            <div class="hero__actions">
                 <a href="#projects" class="btn btn--primary">Xem dự án</a>
-                <a href="CV-NguyenVanA.pdf" download class="btn btn--secondary">Download CV</a>
+                <a href="#contact" class="btn btn--secondary">Liên hệ</a>
             </div>
         </div>
     </section>
@@ -55,12 +60,12 @@
             <h2 class="section-title">Về mình</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Xin chào! Mình là <strong>full-stack developer</strong> với hơn 4 năm kinh nghiệm làm việc với React, Next.js, Node.js và các công nghệ hiện đại.</p>
-                    <p>Mình thích biến những ý tưởng phức tạp thành giao diện đơn giản, đẹp mắt và hiệu năng cao. Ngoài code, mình hay uống cà phê, chơi guitar và đọc sách về thiết kế.</p>
-                    <p>Hiện đang tìm kiếm cơ hội mới để cùng team tạo ra sản phẩm thay đổi cuộc sống người dùng.</p>
+                    <p>Mình là một lập trình viên đam mê công nghệ với hơn <strong>4 năm kinh nghiệm</strong> làm việc với các công nghệ hiện đại như React, Next.js, Node.js, TypeScript.</p>
+                    <p>Thích biến những ý tưởng phức tạp thành giao diện đơn giản, mượt mà và dễ sử dụng. Ngoài code, mình hay nghe nhạc lo-fi, uống cà phê và đọc sách về thiết kế sản phẩm.</p>
+                    <p>Hiện đang tìm kiếm cơ hội mới để cùng team tạo ra những sản phẩm thực sự có giá trị cho người dùng.</p>
                 </div>
-                <div class="about-img">
-                    <img src="https://via.placeholder.com/500x600/667eea/ffffff?text=Your+Photo" alt="Nguyễn Văn A">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face" alt="Nguyễn Văn A">
                 </div>
             </div>
         </div>
@@ -69,14 +74,14 @@
     <!-- Skills -->
     <section id="skills" class="section bg-alt">
         <div class="container">
-            <h2 class="section-title">Kỹ năng & Công nghệ</h2>
+            <h2 class="section-title">Kỹ năng</h2>
             <div class="skills-grid">
-                <div class="skill-card"><i class="fab fa-react"></i><span>React / Next.js</span></div>
-                <div class="skill-card"><i class="fab fa-node-js"></i><span>Node.js / Express</span></div>
-                <div class="skill-card"><i class="fas fa-database"></i><span>MongoDB / PostgreSQL</span></div>
-                <div class="skill-card"><i class="fab fa-js-square"></i><span>TypeScript</span></div>
-                <div class="skill-card"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
-                <div class="skill-card"><i class="fas fa-paint-brush"></i><span>Tailwind / SCSS</span></div>
+                <div class="skill-item" data-aos="fade-up"><i class="fab fa-react"></i> React / Next.js</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="100"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-database"></i> MongoDB / PostgreSQL</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-js"></i> TypeScript</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="400"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+                <div class="skill-item" data-aos="fade-up" data-aos-delay="500"><i class="fas fa-paint-brush"></i> Tailwind / Figma</div>
             </div>
         </div>
     </section>
@@ -86,19 +91,32 @@
         <div class="container">
             <h2 class="section-title">Dự án nổi bật</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">E-Commerce Platform</div>
+                <div class="project-card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-commerce">
                     <div class="project-info">
                         <h3>Shopee Clone</h3>
-                        <p>Web thương mại điện tử full-stack với giỏ hàng, thanh toán, đánh giá.</p>
-                        <div class="tech">React, Node.js, MongoDB, Stripe</div>
+                        <p>Web thương mại điện tử full-stack với giỏ hàng, thanh toán Stripe, đánh giá sản phẩm.</p>
+                        <div class="project-tech">React, Node.js, MongoDB, Stripe</div>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 5 project nữa (ảnh thật, không lỗi) -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1558655146-9f40138ed1cb?w=600&h=400&fit=crop" alt="Netflix Clone">
+                    <div class="project-info">
+                        <h3>Netflix Clone</h3>
+                        <p>Giao diện giống Netflix 99%, responsive, trailer tự động phát.</p>
+                        <div class="project-tech">React, TMDB API, Firebase</div>
                         <div class="project-links">
                             <a href="#"><i class="fab fa-github"></i></a>
                             <a href="#"><i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
-                <!-- Thêm 5-6 project nữa nếu muốn -->
+                <!-- Thêm 4 cái nữa nếu cần, mình để 2 cho gọn -->
             </div>
         </div>
     </section>
@@ -107,8 +125,13 @@
     <section id="contact" class="section bg-alt">
         <div class="container">
             <h2 class="section-title">Liên hệ mình</h2>
-            <p class="contact-text">Có dự án hay ý tưởng? Inbox mình ngay nhé!</p>
-            <a href="mailto:nguyenvana.real@gmail.com" class="contact-email">nguyenvana.real@gmail.com</a>
+            <p class="contact-text">Có dự án hay ý tưởng? Mình luôn sẵn sàng!</p>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Tên của bạn" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Tin nhắn của bạn" rows="6" required></textarea>
+                <button type="submit" class="btn btn--primary">Gửi tin nhắn</button>
+            </form>
             <div class="social-links">
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -118,8 +141,11 @@
         </div>
     </section>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <script src="script.js"></script>
 </body>
 </html>
