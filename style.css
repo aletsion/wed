@@ -1,50 +1,82 @@
 :root {
-  --bg: #0d0d1f;
-  --bg-glass: rgba(20, 20, 40, 0.6);
-  --text: #e0e0ff;
-  --text-muted: #a0a0cc;
-  --accent: #00d4ff;
-  --accent-2: #ff2e63;
-  --gradient: linear-gradient(135deg, #00d4ff, #ff2e63);
-  --border: rgba(0, 212, 255, 0.3);
-  --radius: 1.8rem;
-  --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  --bg: #0a0a1a;
+  --neon-blue: #00ffff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #9d00ff;
+  --text: #e0ffff;
 }
 
-[data-theme="light"] {
-  --bg: #f0f4ff;
-  --bg-glass: rgba(255, 255, 255, 0.8);
-  --text: #1a1a2e;
-  --text-muted: #555;
-  --accent: #0066ff;
-  --accent-2: #ff006e;
+body { 
+  font-family: 'Orbitron', sans-serif; 
+  background: #000; 
+  color: var(--text); 
+  overflow-x: hidden;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; overflow-x: hidden; }
-
-/* GIỮ NGUYÊN NỀN PARTICLES */
-#particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-
-/* Header - Glassmorphism + Neon */
-.header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 9999;
-  padding: 1.5rem 0;
-  background: rgba(13, 13, 31, 0.7);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: var(--transition);
+#particles-js { 
+  position: fixed; 
+  top: 0; left: 0; 
+  width: 100%; height: 100%; 
+  z-index: 1;
 }
 
-/* Hero - Siêu đẹp kiểu mới */
-.hero { min-height: 100vh; display: grid; align-items: center; padding-top: 80px; }
-.hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-.hero__title { font-size: clamp(5rem, 12vw, 9rem); font-weight: 900; line-height: 0.9; }
-.avatar-container { position: relative; width: 420px; height: 420px; margin: 0 auto; }
-.avatar { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 6px solid var(--accent); box-shadow: 0 0 60px rgba(0, 212, 255, 0.5); }
-.avatar-glow { position: absolute; inset: -30px; background: radial-gradient(circle, var(--accent), transparent 70%); border-radius: 50%; animation: pulse 4s infinite; }
-.floating-orb { position: absolute; background: var(--accent); border-radius: 50%; filter: blur(20px); animation: float 6s infinite ease-in-out; }
+#3d-bg { 
+  position: fixed; 
+  top: 0; left: 0; 
+  width: 100%; height: 100%; 
+  z-index: 0;
+}
 
-/* Hơn 2500 dòng CSS còn lại: about, experience timeline, skills radar, project grid với hover 3D, contact form với validation... tất cả đều siêu đẹp, siêu chuyên nghiệp */
+/* Glitch Text */
+.glitch {
+  font-size: 8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  animation: glitch 3s infinite;
+}
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+.glitch::before { 
+  animation: glitch-1 0.5s infinite;
+  color: var(--neon-pink);
+  z-index: -1;
+}
+.glitch::after { 
+  animation: glitch-2 0.5s infinite;
+  color: var(--neon-blue);
+  z-index: -2;
+}
+
+/* 3D Tilt Card */
+.card-3d {
+  width: 300px; height: 400px;
+  background: linear-gradient(45deg, #1a1a2e, #16213e);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 50px rgba(0,255,255,0.5);
+  transition: all 0.4s;
+}
+.card-3d img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Project cards 3D */
+.project-card-3d {
+  perspective: 1000px;
+}
+.project-card-3d .card-inner {
+  background: linear-gradient(135deg, #16213e, #1a1a2e);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--neon-blue);
+  box-shadow: 0 0 30px rgba(0,255,255,0.3);
+  transition: all 0.6s;
+  transform-style: preserve-3d;
+}
+.project-card-3d:hover .card-inner {
+  transform: translateZ(50px) rotateX(10deg);
+  box-shadow: 0 0 80px rgba(0,255,255,0.8);
+}
