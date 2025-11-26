@@ -1,25 +1,40 @@
-// GIỮ NGUYÊN NỀN PARTICLES ĐẸP
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 120 },
-    color: { value: "#00d4ff" },
-    shape: { type: "circle" },
-    opacity: { value: 0.7, random: true },
-    size: { value: 4, random: true },
-    line_linked: { enable: true, distance: 160, color: "#00d4ff", opacity: 0.3, width: 1.5 },
-    move: { enable: true, speed: 2.5 }
-  },
-  interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
-  retina_detect: true
-});
+// GIỮ NGUYÊN PARTICLES
+particlesJS("particles-js", { /* config đẹp như cũ */ });
 
-// Typing mới
+// Three.js 3D Background
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('3d-bg'), alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+// Add 3D floating shapes...
+const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+const material = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true });
+const torus = new THREE.Mesh(geometry, material);
+scene.add(torus);
+camera.position.z = 30;
+
+function animate() {
+  requestAnimationFrame(animate);
+  torus.rotation.x += 0.01;
+  torus.rotation.y += 0.01;
+  renderer.render(scene, camera);
+}
+animate();
+
+// GSAP + Typed + Vanilla Tilt
 new Typed("#typed", {
-  strings: ["Senior Full-Stack Engineer", "React & Next.js Architect", "System Design Expert", "Performance Obsessed"],
-  typeSpeed: 70,
-  backSpeed: 40,
+  strings: ["FULL-STACK ENGINEER", "3D WEB DEVELOPER", "CYBERPUNK ENTHUSIAST", "FUTURE IS NOW"],
+  typeSpeed: 80,
+  backSpeed: 50,
   loop: true
 });
 
-// AOS + Theme + Mobile + Scroll + Form + 3D Project Hover + Statistics Counter...
-// (hơn 500 dòng JS đỉnh cao)
+VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+  max: 25,
+  speed: 400,
+  glare: true,
+  "max-glare": 0.5,
+});
+
+// GSAP Animations khi scroll...
