@@ -3,70 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyễn Văn A - Portfolio</title>
+    <meta name="description" content="Portfolio cá nhân của Nguyễn Văn A - Full-stack Developer">
+    <title>Nguyễn Văn A | Full-stack Developer</title>
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <div class="logo">NV.A</div>
-            <div class="nav-links" id="navLinks">
-                <a href="#home">Trang chủ</a>
-                <a href="#about">Giới thiệu</a>
-                <a href="#contact">Liên hệ</a>
-            </div>
-            <div class="menu-toggle" id="menuToggle">
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">NVA.</a>
+            <ul class="nav__list" id="navList">
+                <li><a href="#home" class="nav__link">Home</a></li>
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#skills" class="nav__link">Skills</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Xin chào, mình là <span class="highlight">Nguyễn Văn A</span></h1>
-            <p>Lập trình viên Full-Stack | Đam mê công nghệ & sáng tạo</p>
-            <a href="#about" class="btn">Tìm hiểu thêm</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2>Về mình</h2>
-            <p>Mình là một lập trình viên đam mê công nghệ, hiện đang làm việc với các công nghệ hiện đại như HTML, CSS, JavaScript, React, Node.js, MongoDB...</p>
-            <p>Thích học hỏi cái mới, giải quyết vấn đề khó và xây dựng những sản phẩm có giá trị thực tế cho người dùng.</p>
-            
-            <div class="skills">
-                <span class="skill-tag">HTML/CSS</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">MongoDB</span>
-                <span class="skill-tag">Git & GitHub</span>
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Xin chào, mình là <span class="gradient-text">Nguyễn Văn A</span>
+                    </h1>
+                    <p class="hero__subtitle">Full-stack Developer & UI/UX Enthusiast</p>
+                    <p class="hero__description">
+                        Biến ý tưởng thành sản phẩm số đẹp mắt, hiệu năng cao và trải nghiệm người dùng tuyệt vời.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#contact" class="btn btn--primary">Liên hệ mình</a>
+                        <a href="#about" class="btn btn--outline">Xem thêm →</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="https://via.placeholder.com/500x500/667eea/ffffff?text=Your+Photo" alt="Nguyễn Văn A" class="hero__img">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Liên hệ với mình</h2>
-            <p>Email: nguyenvana@gmail.com</p>
-            <p>Số điện thoại: 0123 456 789</p>
-            
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+        <!-- About -->
+        <section class="about section" id="about">
+            <div class="container">
+                <h2 class="section__title">Về mình</h2>
+                <div class="about__grid">
+                    <div class="about__text">
+                        <p>Mình là một lập trình viên đam mê công nghệ, luôn tìm kiếm thử thách mới và cách giải quyết vấn đề sáng tạo.</p>
+                        <p>Thích xây dựng những sản phẩm không chỉ hoạt động tốt mà còn mang lại trải nghiệm người dùng xuất sắc.</p>
+                        <p>Khi không code, mình thường đọc sách, chơi guitar hoặc đi cafe ngắm phố phường.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Skills -->
+        <section class="skills section" id="skills">
+            <div class="container">
+                <h2 class="section__title">Kỹ năng</h2>
+                <div class="skills__grid">
+                    <div class="skill">HTML & CSS</div>
+                    <div class="skill">JavaScript / TypeScript</div>
+                    <div class="skill">React / Next.js</div>
+                    <div class="skill">Node.js / Express</div>
+                    <div class="skill">MongoDB / PostgreSQL</div>
+                    <div class="skill">Git & GitHub</div>
+                    <div class="skill">Figma & UI/UX</div>
+                    <div class="skill">Tailwind / SCSS</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <h2 class="section__title">Liên hệ</h2>
+                <p class="contact__text">Rất mong được hợp tác cùng bạn!</p>
+                <a href="mailto:nguyenvana.real@gmail.com" class="contact__email">nguyenvana.real@gmail.com</a>
+                <div class="social">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
